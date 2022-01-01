@@ -8,7 +8,10 @@
 4. The IPFS hash plus the public key should be sent using Ethers to a local ethereum node  
 5. Ethers should run the solidity code that reiceves the user public key and its hash
 6. Use the graph to list all the message of the user
-7. Now messages should be sent to another user/key. It might be a good idea to use a merkle tree for this https://github.com/Anish-Agnihotri/merkle-airdrop-starter
-8. Support non metamask wallets
-9. Deploy in eth tesnet
-10. Deploy in polygon and arbitrum
+
+Up to here the functionality is similar to a notepad instead of a mailing system. After step it works as a mail system
+
+8. Now messages should be sent to another user/key. It might be a good idea to use a merkle tree for this https://github.com/Anish-Agnihotri/merkle-airdrop-starter
+9. Support non metamask wallets
+10. Deploy in eth tesnet
+11. Deploy in polygon and arbitrum
