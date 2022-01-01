@@ -1,4 +1,4 @@
-# decentralized_email
+# eth_ipfs_email
 
 1. Makefile que levanta todo, baja dependencias. Lo ideal seria que use Nix
 
