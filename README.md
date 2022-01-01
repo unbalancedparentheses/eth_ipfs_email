@@ -8,11 +8,11 @@
 
 4. El boton manda el mensaje encriptado a IPFS (Postgres) y manda el hash del mensaje en IPFS y la clave publica a Ethereum.
 
-5. Truffle/Ethereum es el backend (Elixir)
+5. Truffle/Ethereum es el backend (Elixir). 
 
 6. Con The Graph listar todos los mensajes de un usuario
 
-8. Agregar que los mensajes tengan destinatario
+8. Agregar que los mensajes tengan destinatario. Para esto hay que agregar el merkletree (https://github.com/Anish-Agnihotri/merkle-airdrop-starter)
 
 9. Agregar soporte para wallets que no sean metamask
 
