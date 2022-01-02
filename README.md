@@ -19,10 +19,10 @@ Up to here the functionality is similar to a notepad instead of a mailing system
 
 ## Quick start
 
-Make init to start repo 
-make run_app to start the web service
-make run_node to start the local blockchain
-make test_contracts to build and test the contracts
+- make init to start repo 
+- make run_app to start the web service
+- make run_node to start the local blockchain
+- make test_contracts to build and test the contracts
 ## Deploy contracts
 
 To deploy contracts on the local network, we can use something like:
