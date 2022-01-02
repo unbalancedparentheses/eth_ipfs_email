@@ -1,13 +1,18 @@
 import { useState } from "react"
+import { create } from "ipfs-http-client";
+
+const client = create('https://ipfs.infura.io:5001/api/v0' as any);
 
 export const EmailForm = () => {
 
   const [to, setTo] = useState<string>("")
   const [msg, setMsg] = useState<string>("")
+  const [msgUrl, setMsgUrl] = useState("")
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    alert(msg)
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const created = await client.add(msg);
+    setMsgUrl(`https://ipfs.infura.io/ipfs/${created.path}`);
   }
 
   return (
@@ -28,6 +33,8 @@ export const EmailForm = () => {
         <br />
         <input type="submit" value="Send" />
       </form>
+      <br />
+      <a href={msgUrl} target="_blank">{msgUrl}</a>      
     </>
   )
 }
