@@ -13,8 +13,6 @@ function App() {
   async function getAccounts(provider: any) {
     const val = await provider.send("eth_requestAccounts", []);
     setAccounts(val)
-    console.log(val)
-    console.log(accounts)
   }
 
   return (
