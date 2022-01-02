@@ -3,6 +3,6 @@ init:
 	git submodule init
 	git submodule update
 run_app:
-	(cd decentralized-email-frontend && npm install && npm start) 
+	(cd frontend && npm install && npm start) 
 test_contracts:
 	forge test --root contracts/
