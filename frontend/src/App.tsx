@@ -4,9 +4,10 @@ import './App.css';
 import { ethers } from "ethers";
 import { EmailForm } from "./components/email_form";
 
+declare var window: any
 
 const App = () => {
-  const provider = new ethers.providers.Web3Provider((window as any).ethereum);
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
 
   const [accounts, setAccounts] = useState<string[]>([""]);
 
@@ -17,8 +18,10 @@ const App = () => {
   }
 
   useEffect(() => {
-    getAccounts(provider);
-  }, [accounts])
+    getAccounts(provider)
+    if(window.ethereum)
+      window.ethereum.on('accountsChanged', (accounts: string[]) => setAccounts(accounts))
+  }, [])
 
   return (
     <div>
