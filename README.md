@@ -15,3 +15,18 @@ Up to here the functionality is similar to a notepad instead of a mailing system
 9. Support non metamask wallets
 10. Deploy in eth tesnet
 11. Deploy in polygon and arbitrum
+
+
+## Quick start
+
+Make init to start repo 
+make run_app to start the web service
+make run_node to start the local blockchain
+make test_contracts to build and test the contracts
+## Deploy contracts
+
+To deploy contracts on the local network, we can use something like:
+
+forge create Contract --rpc-url http://127.0.0.1:8545 --root contracts/ --private-key 1d53d2a88eaa255280b27d5cbe1698cb7f459d621d23609089929ff9dbbc21d3
+
+where Contract is the name of the contract
