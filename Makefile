@@ -3,4 +3,4 @@ init:
 run_app:
 	(cd decentralized-email-frontend && npm install && npm start) 
 test_contracts:
-	forge test --root contracts/ 
+	forge test --root contracts/ -o contracts/ 
