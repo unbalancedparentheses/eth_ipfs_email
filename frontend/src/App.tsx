@@ -18,7 +18,7 @@ const App = () => {
 
   useEffect(() => {
     getAccounts(provider);
-  }, [])
+  }, [accounts])
 
   return (
     <div>
