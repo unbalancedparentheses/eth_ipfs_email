@@ -13,7 +13,6 @@ mkShell {
   buildInputs = [
     nodejs
     git
-    nodePackages.ganache-cli
     libiconv
     nixpkgs.latest.rustChannels.nightly.rust
   ]

@@ -1,33 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from 'antd';
 import './App.css';
 import { ethers } from "ethers";
+import { EmailForm } from "./components/email_form";
 
+declare var window: any
 
-function App() {
-  const provider = new ethers.providers.Web3Provider((window as any).ethereum);
+const App = () => {
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
 
   const [accounts, setAccounts] = useState<string[]>([""]);
 
 
-  async function getAccounts(provider: any) {
+  const getAccounts = async (provider: ethers.providers.Web3Provider) => {
     const val = await provider.send("eth_requestAccounts", []);
     setAccounts(val)
   }
 
+  useEffect(() => {
+    getAccounts(provider)
+    if(window.ethereum)
+      window.ethereum.on('accountsChanged', (accounts: string[]) => setAccounts(accounts))
+  }, [])
+
   return (
     <div>
-      <div>      
-        <b>
-        Hola
-        </b>
-        <b>
-          Tus cuentas conectadas son: {accounts}
-        </b>
+      <div>
+          Hi! Your connected account is: <b>{accounts}</b>
       </div>
-    <Button type="primary" onClick={async () => { await getAccounts(provider); }}>
-      Refresh
-    </Button>
+      <EmailForm/>
     </div>
   );
 }
