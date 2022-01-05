@@ -21,5 +21,7 @@ contract MailerTest is DSTest, Mailer {
         assertEq(emails.length, 2);
         assertEq(emails[0].ipfs_hash, ipfs_hash1);
         assertEq(emails[1].ipfs_hash, ipfs_hash2);
+        assertEq(emails[0].from, address(this));
+        assertEq(emails[1].from, address(this));
     }
 }
