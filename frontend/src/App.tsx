@@ -7,7 +7,7 @@ import { EmailForm } from "./components/email_form";
 declare var window: any
 
 const App = () => {
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const provider = new ethers.providers.Web3Provider(window.ethereum) as ethers.providers.Web3Provider;
 
   const [accounts, setAccounts] = useState<string[]>([""]);
 
@@ -15,7 +15,10 @@ const App = () => {
   const getAccounts = async (provider: ethers.providers.Web3Provider) => {
     const val = await provider.send("eth_requestAccounts", []);
     setAccounts(val)
+    const signer = await provider.getSigner(0);
+
   }
+
 
   useEffect(() => {
     getAccounts(provider)
@@ -28,7 +31,7 @@ const App = () => {
       <div>
           Hi! Your connected account is: <b>{accounts}</b>
       </div>
-      <EmailForm/>
+      <EmailForm provider={provider} />
     </div>
   );
 }
