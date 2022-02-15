@@ -5,8 +5,8 @@ with pkgs;
 let
   inherit (lib) optional optionals;
   nodejs = nodejs-16_x;
-  moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
-  nixpkgs = import <nixpkgs> { overlays = [ moz_overlay ]; };
+  rust_overlay = import (builtins.fetchTarball https://github.com/oxalica/rust-overlay/archive/master.tar.gz);
+  nixpkgs = import <nixpkgs> { overlays = [ rust_overlay ]; };
 in
 
 mkShell {
@@ -14,7 +14,7 @@ mkShell {
     nodejs
     git
     libiconv
-    nixpkgs.latest.rustChannels.nightly.rust
+    nixpkgs.rust-bin.stable.latest.default
   ]
   ++ optional stdenv.isLinux inotify-tools # For file_system on Linux.
   ++ optionals stdenv.isDarwin (with darwin.apple_sdk.frameworks; [
