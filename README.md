@@ -23,10 +23,12 @@ Up to here the functionality is similar to a notepad instead of a mailing system
 - make run_app to start the web service
 - make run_node to start the local blockchain
 - make test_contracts to build and test the contracts
-## Deploy contracts
+- deploy_on_local_node to deploy contracts on local node
 
-To deploy contracts on the local network, we can use something like:
+Also, remember to add hardhat local network to metamask and reset the account after restarting the network, else you will see an invalid nonce error.
 
-forge create Contract --rpc-url http://127.0.0.1:8545 --root contracts/ --private-key 1d53d2a88eaa255280b27d5cbe1698cb7f459d621d23609089929ff9dbbc21d3
+Usually:
 
-where Contract is the name of the contract
+http://127.0.0.1:8545/
+
+Chain ID: 1337
