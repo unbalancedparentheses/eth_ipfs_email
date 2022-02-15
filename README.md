@@ -24,3 +24,11 @@ Up to here the functionality is similar to a notepad instead of a mailing system
 - make run_node to start the local blockchain
 - make test_contracts to build and test the contracts
 - deploy_on_local_node to deploy contracts on local node
+
+Also, remember to add hardhat local network to metamask and reset the account after restarting the network, else you will see an invalid nonce error.
+
+Usually:
+
+http://127.0.0.1:8545/
+
+Chain ID: 1337
