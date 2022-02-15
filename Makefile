@@ -1,6 +1,5 @@
 init:
-	cargo install --git https://github.com/gakonst/foundry --bin forge --locked
-	cargo install --git https://github.com/gakonst/foundry --bin cast
+	curl -L https://foundry.paradigm.xyz | bash
 	git submodule init
 	git submodule update
 	(cd hh_node && npm install --save-dev hardhat)
